@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prestige Blackline | Luxury in Motion</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Lato', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    header {
+      background: url('https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.65);
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      color: #f1c40f;
+      z-index: 1;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      z-index: 1;
+      margin-top: 10px;
+    }
+
+    header a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: #f1c40f;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 4px;
+      z-index: 1;
+      transition: 0.3s;
+    }
+
+    header a:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: #f1c40f;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .services, .why-choose {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .service-box {
+      background: #111;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    footer {
+      background: #111;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header>
+    <h1>Prestige Blackline</h1>
+    <p>Luxury in Motion</p>
+    <a href="https://forms.gle/YOURBOOKINGFORM" target="_blank">Book Your Ride</a>
+  </header>
+
+  <!-- ABOUT -->
+  <section>
+    <h2>About Us</h2>
+    <p>
+      At Prestige Blackline, we redefine executive transportation. From airport pickups to private events,
+      our luxury black SUVs and professional drivers deliver reliability, comfort, and discretion.
+      Based in Atlanta, we serve clients who demand more than just a ride — they expect Prestige in Motion.
+    </p>
+  </section>
+
+  <!-- SERVICES -->
+  <section>
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service-box">✈️ <br> Airport Transfers</div>
+      <div class="service-box">💼 <br> Corporate Travel</div>
+      <div class="service-box">🎉 <br> Private Events</div>
+      <div class="service-box">⏱️ <br> Hourly Chauffeur</div>
+    </div>
+  </section>
+
+  <!-- WHY CHOOSE US -->
+  <section>
+    <h2>Why Choose Us</h2>
+    <div class="why-choose">
+      <div class="service-box">✔ Luxury SUVs (Escalade IQ Flagship)</div>
+      <div class="service-box">✔ Professional, Discreet Chauffeurs</div>
+      <div class="service-box">✔ Always Punctual, Always Reliable</div>
+      <div class="service-box">✔ Competitive Rates vs Uber Black</div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section>
+    <h2>Reserve Your Ride</h2>
+    <p style="text-align:center;">
+      Book today and experience true luxury in motion. <br><br>
+      <a href="https://forms.gle/YOURBOOKINGFORM" target="_blank">Schedule Now</a>
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    Prestige Blackline LLC © 2025 | Executive Black SUV Service <br>
+    Serving Atlanta Metro & Surrounding Areas | Instagram: @PrestigeBlacklineATL
+  </footer>
+
+</body>
+</html>
