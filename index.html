@@ -1,162 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prestige Blackline | Luxury in Motion</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Elegant Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Lato', sans-serif;
-      background-color: #000;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
       color: #fff;
+      background-color: #0d0d0d;
+      line-height: 1.6;
     }
 
     header {
-      background: url('https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
       position: relative;
+      height: 100vh;
+      background: url('https://i.ibb.co/nBLFZ8r/escalade-iq-atlanta.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      overflow: hidden;
     }
 
     header::after {
       content: "";
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.65);
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    header .hero-text {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 20px;
     }
 
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: 4rem;
-      color: #f1c40f;
-      z-index: 1;
-      margin: 0;
+      margin-bottom: 1rem;
+      color: #e5e5e5;
     }
 
     header p {
-      font-size: 1.5rem;
-      z-index: 1;
-      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #cfcfcf;
+      margin-bottom: 2rem;
     }
 
-    header a {
+    .btn {
       display: inline-block;
-      margin-top: 20px;
-      padding: 12px 30px;
-      background: #f1c40f;
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 4px;
-      z-index: 1;
-      transition: 0.3s;
+      padding: 14px 32px;
+      border: none;
+      background: linear-gradient(90deg, #00ffe7, #0077ff);
+      color: #0d0d0d;
+      font-weight: 700;
+      text-transform: uppercase;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    header a:hover {
-      background: #fff;
-      color: #000;
+    .btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #0077ff, #00ffe7);
     }
 
     section {
-      padding: 60px 20px;
-      max-width: 1100px;
+      padding: 80px 20px;
+      max-width: 1200px;
       margin: auto;
     }
 
     h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
-      color: #f1c40f;
       text-align: center;
       margin-bottom: 40px;
+      color: #fff;
     }
 
-    .services, .why-choose {
+    .features {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      gap: 40px;
       text-align: center;
     }
 
-    .service-box {
-      background: #111;
-      padding: 20px;
-      border-radius: 8px;
+    .feature {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      padding: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .feature:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-5px);
+    }
+
+    .feature svg {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 15px;
+      color: #00ffe7;
     }
 
     footer {
-      background: #111;
+      background: #000;
+      padding: 40px 20px;
       text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
       color: #aaa;
+    }
+
+    footer a {
+      color: #00ffe7;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <!-- HERO -->
+  <!-- Hero Section -->
   <header>
-    <h1>Prestige Blackline</h1>
-    <p>Luxury in Motion</p>
-    <a href="https://forms.gle/YOURBOOKINGFORM" target="_blank">Book Your Ride</a>
+    <div class="hero-text">
+      <h1>Prestige Blackline</h1>
+      <p>Luxury in Motion – Atlanta’s Premier Black SUV Service</p>
+      <a href="#book" class="btn">Book Your Ride</a>
+    </div>
   </header>
 
-  <!-- ABOUT -->
+  <!-- Features -->
   <section>
-    <h2>About Us</h2>
-    <p>
-      At Prestige Blackline, we redefine executive transportation. From airport pickups to private events,
-      our luxury black SUVs and professional drivers deliver reliability, comfort, and discretion.
-      Based in Atlanta, we serve clients who demand more than just a ride — they expect Prestige in Motion.
-    </p>
-  </section>
-
-  <!-- SERVICES -->
-  <section>
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service-box">✈️ <br> Airport Transfers</div>
-      <div class="service-box">💼 <br> Corporate Travel</div>
-      <div class="service-box">🎉 <br> Private Events</div>
-      <div class="service-box">⏱️ <br> Hourly Chauffeur</div>
+    <h2>Why Choose Prestige Blackline</h2>
+    <div class="features">
+      <div class="feature">
+        <i data-lucide="car"></i>
+        <h3>Flagship Fleet</h3>
+        <p>Ride in our Cadillac Escalade IQ – the ultimate in comfort, technology, and elegance.</p>
+      </div>
+      <div class="feature">
+        <i data-lucide="map-pin"></i>
+        <h3>Atlanta Expertise</h3>
+        <p>Serving Hartsfield-Jackson, luxury hotels, and private events across the metro area.</p>
+      </div>
+      <div class="feature">
+        <i data-lucide="crown"></i>
+        <h3>Elite Experience</h3>
+        <p>Personalized, discreet, and professional service for executives and VIPs.</p>
+      </div>
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
-  <section>
-    <h2>Why Choose Us</h2>
-    <div class="why-choose">
-      <div class="service-box">✔ Luxury SUVs (Escalade IQ Flagship)</div>
-      <div class="service-box">✔ Professional, Discreet Chauffeurs</div>
-      <div class="service-box">✔ Always Punctual, Always Reliable</div>
-      <div class="service-box">✔ Competitive Rates vs Uber Black</div>
-    </div>
-  </section>
-
-  <!-- BOOKING -->
-  <section>
+  <!-- Booking -->
+  <section id="book">
     <h2>Reserve Your Ride</h2>
-    <p style="text-align:center;">
-      Book today and experience true luxury in motion. <br><br>
-      <a href="https://forms.gle/YOURBOOKINGFORM" target="_blank">Schedule Now</a>
-    </p>
+    <p style="text-align:center; margin-bottom:20px;">Book instantly using our secure form below.</p>
+    <div style="text-align:center;">
+      <a href="https://forms.gle/yourbookingform" target="_blank" class="btn">Book Now</a>
+    </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- Footer -->
   <footer>
-    Prestige Blackline LLC © 2025 | Executive Black SUV Service <br>
-    Serving Atlanta Metro & Surrounding Areas | Instagram: @PrestigeBlacklineATL
+    <p>&copy; 2025 Prestige Blackline LLC. All rights reserved.</p>
+    <p><a href="mailto:info@prestigeblackline.com">info@prestigeblackline.com</a></p>
   </footer>
+
+  <!-- Activate Lucide Icons -->
+  <script>
+    lucide.createIcons();
+  </script>
 
 </body>
 </html>
