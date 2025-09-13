@@ -6,6 +6,11 @@
   <title>Prestige Blackline</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
@@ -88,20 +93,23 @@
       margin: 0 0 30px;
     }
 
+    /* Gradient Button */
     .hero-text button {
-      padding: 12px 30px;
+      padding: 14px 36px;
       font-size: 18px;
       border: none;
-      border-radius: 30px;
-      background-color: linear-gradient(90deg, #00ffe7, #0077ff); /* Blue button */
+      border-radius: 40px;
+      background: linear-gradient(90deg, #00ffe7, #0077ff); /* gradient */
       color: #0d0d0d;
       font-weight: bold;
+      text-transform: uppercase;
       cursor: pointer;
       transition: all 0.3s ease;
     }
 
     .hero-text button:hover {
-      background-color: gradient(90deg, #0077ff, #00ffe7);
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #0077ff, #00ffe7);
       color: black;
     }
 
@@ -120,10 +128,14 @@
       background-color: black;
     }
 
+    /* Gradient Blue Titles */
     section h2 {
       font-size: 42px;
       margin-bottom: 20px;
-      color: white;
+      background: linear-gradient(90deg, #00ffe7, #0077ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
     }
 
     section p {
@@ -177,8 +189,8 @@
       <h1>Prestige Blackline</h1>
       <h2>Luxury in Motion</h2>
       <p>Atlanta's Premiere Black SUV Service.</p>
-      <button>Book Now</button>
-      <div class="sub-tagline">Professional Chauffeurs • Impeccable SUVs • 24/7 Service</div>
+      <button>Book Your Ride</button>
+      <div class="sub-tagline">Professional chauffeurs • Impeccable SUVs • 24/7 Service</div>
     </div>
   </header>
 
