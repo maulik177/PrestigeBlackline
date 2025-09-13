@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prestige Blackline</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Playfair Display', serif;
       background-color: black;
       color: white;
     }
@@ -44,7 +44,7 @@
       font-family: 'Great Vibes', cursive;
       font-size: 32px;
       font-weight: 400;
-      color: #f5c542; /* gold */
+      color: white; /* White cursive PB */
     }
 
     nav ul {
@@ -66,15 +66,15 @@
     }
 
     nav ul li a:hover {
-      color: #f5c542;
+      color: #1e90ff;
     }
 
     /* Hero text */
     .hero-text h1 {
-      font-family: 'Great Vibes', cursive;
+      font-family: 'Playfair Display', serif;
       font-size: 80px;
       margin: 0;
-      color: #f5c542;
+      color: white;
     }
 
     .hero-text h2 {
@@ -93,8 +93,8 @@
       font-size: 18px;
       border: none;
       border-radius: 30px;
-      background-color: #f5c542;
-      color: black;
+      background-color: #1e90ff; /* Blue button */
+      color: white;
       font-weight: bold;
       cursor: pointer;
       transition: all 0.3s ease;
@@ -112,6 +112,54 @@
       font-style: italic;
       opacity: 0.85;
     }
+
+    /* Bottom Sections */
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: black;
+    }
+
+    section h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    section p {
+      font-size: 18px;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      color: #dcdcdc;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .service-card {
+      background: #111;
+      padding: 30px;
+      border-radius: 12px;
+      width: 280px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    }
+
+    .service-card h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #1e90ff;
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      background: #111;
+      color: #999;
+    }
   </style>
 </head>
 <body>
@@ -120,9 +168,9 @@
       <div class="logo">PB</div>
       <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <div class="hero-text">
@@ -133,5 +181,41 @@
       <div class="sub-tagline">Professional chauffeurs • Impeccable SUVs • 24/7 Service</div>
     </div>
   </header>
+
+  <!-- Our Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>Airport Transfers</h3>
+        <p>Seamless, timely pickups and drop-offs to ATL and regional airports.</p>
+      </div>
+      <div class="service-card">
+        <h3>Corporate Travel</h3>
+        <p>Executive-class rides for business professionals and VIP clients.</p>
+      </div>
+      <div class="service-card">
+        <h3>Special Events</h3>
+        <p>Arrive in style for weddings, galas, and exclusive gatherings.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Prestige Blackline is Atlanta’s premiere black SUV service, built on professionalism, comfort, and style. Our mission is to redefine executive and luxury travel with an unmatched level of service and reliability.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Ready to book your ride? Reach out today.</p>
+    <p>Email: info@prestigeblackline.com | Phone: (404) 555-1234</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Prestige Blackline. All rights reserved.
+  </footer>
 </body>
 </html>
