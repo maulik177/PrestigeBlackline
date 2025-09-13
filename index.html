@@ -26,16 +26,17 @@
     }
 
     header {
-      position: relative;
-      height: 100vh;
-      background: url('IMG_5406.jpg') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      overflow: hidden;
-    }
+  position: relative;
+  height: 100vh;
+  background: url('IMG_5406.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: flex-start; /* pushes content toward the top */
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  padding-top: 120px; /* adjust this number to control distance from top */
+}
 
     header::after {
       content: "";
