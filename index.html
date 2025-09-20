@@ -4,224 +4,235 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prestige Blackline</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* General Styles */
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      font-family: 'Playfair Display', serif;
+      background-color: black;
+      color: white;
     }
 
     header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(0, 0, 0, 0.85);
+      position: relative;
+      height: 100vh;
+      background: url('IMG_5406.jpg') no-repeat center center/cover;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      padding: 20px 50px;
+      justify-content: flex-start;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+      padding-top: 120px;
     }
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 28px;
-      color: white;
+    /* Sticky Top Nav */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 20px 60px;
+      background: rgba(0, 0, 0, 0.7);
+      box-sizing: border-box;
+      z-index: 999;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
       margin: 0;
+      padding: 0;
     }
 
-    header .logo {
-      font-family: 'Brush Script MT', cursive;
-      font-size: 40px;
-      color: white;
+    nav ul li {
+      margin: 0 15px;
     }
 
-    nav a {
+    nav ul li a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
       font-size: 16px;
-      transition: color 0.3s ease;
+      transition: color 0.3s;
     }
 
-    nav a:hover {
+    nav ul li a:hover {
       color: #1e90ff;
     }
 
-    /* Hero Section */
-    .hero {
-      background: url('https://images.unsplash.com/photo-1502877338535-766e1452684a') no-repeat center center/cover;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .hero h2 {
-      font-size: 50px;
+    /* Hero text */
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 80px;
       margin: 0;
-    }
-
-    .hero p {
-      font-size: 20px;
-      margin: 15px 0 30px;
-    }
-
-    .hero .btn {
-      background: linear-gradient(90deg, #0072ff, #00c6ff);
       color: white;
-      padding: 15px 40px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      transition: 0.3s ease;
     }
 
-    .hero .btn:hover {
+    .hero-text h2 {
+      font-size: 32px;
+      font-weight: 400;
+      margin: 10px 0;
+    }
+
+    .hero-text p {
+      font-size: 22px;
+      margin: 0 0 30px;
+    }
+
+    /* Gradient Button */
+    .hero-text button {
+      padding: 14px 36px;
+      font-size: 18px;
+      border: none;
+      border-radius: 40px;
+      background: linear-gradient(90deg, #00ffe7, #0077ff);
+      color: #0d0d0d;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hero-text button:hover {
+      transform: scale(1.05);
+      background: linear-gradient(90deg, #0077ff, #00ffe7);
+      color: black;
+    }
+
+    /* Tagline under button */
+    .sub-tagline {
+      margin-top: 25px;
+      font-size: 18px;
+      font-style: italic;
       opacity: 0.85;
     }
 
-    /* Section Styling */
+    /* Bottom Sections */
     section {
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
+      padding: 80px 20px;
+      text-align: center;
+      background-color: black;
     }
 
+    /* Gradient Blue Titles */
     section h2 {
-      font-size: 32px;
+      font-size: 42px;
       margin-bottom: 20px;
-      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      background: linear-gradient(90deg, #00ffe7, #0077ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-align: center;
+      display: inline-block;
     }
 
     section p {
       font-size: 18px;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      color: #dcdcdc;
       line-height: 1.6;
-      margin-bottom: 20px;
     }
 
-    /* Services */
     .services {
-      text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
     }
 
-    .services .service-item {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    .service-card {
+      background: #111;
       padding: 30px;
-      margin: 20px;
-      display: inline-block;
-      width: 28%;
-      vertical-align: top;
-      transition: transform 0.3s ease;
+      border-radius: 12px;
+      width: 300px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      text-align: left;
     }
 
-    .services .service-item:hover {
-      transform: translateY(-5px);
-    }
-
-    .services h3 {
+    .service-card h3 {
       font-size: 24px;
       margin-bottom: 15px;
-      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      background: linear-gradient(90deg, #00ffe7, #0077ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* Footer */
+    .service-card p {
+      color: #dcdcdc;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
     footer {
-      background: #111;
-      color: #aaa;
+      padding: 30px;
       text-align: center;
-      padding: 20px;
-      font-size: 14px;
-    }
-
-    footer a {
-      color: #00c6ff;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media(max-width: 768px) {
-      .services .service-item {
-        width: 90%;
-      }
-      .hero h2 {
-        font-size: 36px;
-      }
-      .hero p {
-        font-size: 16px;
-      }
+      background: #111;
+      color: #999;
     }
   </style>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
   <header>
-    <div class="logo">PB</div>
-    <h1>Prestige Blackline</h1>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="hero-text">
+      <h1>Prestige Blackline</h1>
+      <h2>Luxury in Motion</h2>
+      <p>Atlanta's Premiere Black SUV Service.</p>
+      <button>Book Your Ride</button>
+      <div class="sub-tagline">Professional Chauffeurs • Impeccable SUVs • 24/7 Service</div>
+    </div>
   </header>
 
-  <section class="hero">
-    <h2>Luxury Executive Transport</h2>
-    <p>Experience seamless black SUV airport pickups and drop-offs with unmatched comfort and style.</p>
-    <a href="#contact" class="btn">Book Your Ride</a>
-  </section>
-
-  <section id="services" class="services">
+  <!-- Our Services Section -->
+  <section id="services">
     <h2>Our Services</h2>
-    <p>At Prestige Blackline, we redefine professional transportation with a focus on luxury, punctuality, and safety. Whether you’re traveling for business or leisure, our fleet and chauffeurs ensure an elevated journey every time.</p>
-
-    <div class="service-item">
-      <h3>Airport Transfers</h3>
-      <p>Arrive at the airport stress-free with our professional black SUV transfers. We track your flight, ensure timely pickups, and provide smooth drop-offs with executive-level comfort.</p>
-    </div>
-    <div class="service-item">
-      <h3>Corporate Travel</h3>
-      <p>Our executive SUVs make the right impression for meetings, client pickups, and corporate events. We combine professionalism, luxury, and reliability for your business needs.</p>
-    </div>
-    <div class="service-item">
-      <h3>Private Events</h3>
-      <p>From weddings and galas to special nights out, Prestige Blackline offers tailored rides that complement your occasion, ensuring you arrive in comfort and style.</p>
+    <div class="services">
+      <div class="service-card">
+        <h3>Airport Transfers</h3>
+        <p>We specialize in reliable, stress-free transportation to and from Atlanta Hartsfield-Jackson International and regional airports. With real-time flight tracking, our chauffeurs are always ready — whether your plane arrives early or late. Enjoy spacious, luxury SUVs designed to accommodate your luggage with ease.</p>
+      </div>
+      <div class="service-card">
+        <h3>Corporate Travel</h3>
+        <p>Impress clients and colleagues with executive-class service. Prestige Blackline provides discreet, punctual, and professional travel tailored to business executives and VIPs. With Wi-Fi-enabled vehicles, you can stay connected and productive on the move while enjoying absolute comfort and privacy.</p>
+      </div>
+      <div class="service-card">
+        <h3>Special Events</h3>
+        <p>From weddings and galas to concerts and sporting events, Prestige Blackline ensures you arrive in style. Our chauffeurs handle the logistics so you can focus on the occasion. Whether it’s an intimate celebration or a large group event, our luxury SUVs deliver elegance and sophistication every step of the way.</p>
+      </div>
     </div>
   </section>
 
+  <!-- About Section -->
   <section id="about">
     <h2>About Us</h2>
-    <p>Prestige Blackline was founded with one mission: to deliver world-class black car services with the sophistication and care our clients deserve. Our chauffeurs are trained professionals committed to discretion, safety, and timeliness.</p>
-    <p>We believe every journey is an experience. With meticulously maintained vehicles, luxury amenities, and personalized service, we guarantee a transportation experience that exceeds expectations.</p>
+    <p>Prestige Blackline was founded with a simple mission: to redefine luxury travel in Atlanta. We believe that transportation should be more than just getting from point A to point B — it should be an experience marked by elegance, reliability, and comfort.</p>
+    <p>Our fleet of late-model black SUVs is meticulously maintained and designed to exceed expectations. Every chauffeur is handpicked for professionalism, courtesy, and knowledge of the Atlanta area. Whether you’re traveling for business or pleasure, we deliver the same commitment to excellence on every ride.</p>
+    <p>At Prestige Blackline, we don’t just drive — we elevate your journey.</p>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Book your next ride with Prestige Blackline today.</p>
-    <p>Email: <a href="mailto:info@prestigeblackline.com">info@prestigeblackline.com</a></p>
-    <p>Phone: <a href="tel:+14045551234">(404) 555-1234</a></p>
+    <p>Ready to book your ride? Reach out today and let us handle the rest.</p>
+    <p>Email: info@prestigeblackline.com | Phone: (404) 555-1234</p>
   </section>
 
   <footer>
-    <p>&copy; 2025 Prestige Blackline. All rights reserved. | <a href="#top">Back to top</a></p>
+    &copy; 2025 Prestige Blackline. All rights reserved.
   </footer>
-
 </body>
 </html>
