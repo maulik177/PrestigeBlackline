@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prestige Blackline</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
   <style>
     /* Smooth scroll */
     html {
@@ -29,27 +29,21 @@
       text-align: center;
       color: white;
       overflow: hidden;
-      padding-top: 100px;
+      padding-top: 120px;
     }
 
-    /* Top Nav */
+    /* Sticky Top Nav */
     nav {
-      position: absolute;
+      position: fixed;
       top: 0;
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       padding: 20px 60px;
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.7);
       box-sizing: border-box;
-    }
-
-    nav .logo {
-      font-family: 'Great Vibes', cursive;
-      font-size: 32px;
-      font-weight: 400;
-      color: white; /* White cursive PB */
+      z-index: 999;
     }
 
     nav ul {
@@ -99,7 +93,7 @@
       font-size: 18px;
       border: none;
       border-radius: 40px;
-      background: linear-gradient(90deg, #00ffe7, #0077ff); /* gradient */
+      background: linear-gradient(90deg, #00ffe7, #0077ff);
       color: #0d0d0d;
       font-weight: bold;
       text-transform: uppercase;
@@ -140,9 +134,10 @@
 
     section p {
       font-size: 18px;
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto 40px;
       color: #dcdcdc;
+      line-height: 1.6;
     }
 
     .services {
@@ -156,14 +151,23 @@
       background: #111;
       padding: 30px;
       border-radius: 12px;
-      width: 280px;
+      width: 300px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      text-align: left;
     }
 
     .service-card h3 {
       font-size: 24px;
       margin-bottom: 15px;
-      color: #1e90ff;
+      background: linear-gradient(90deg, #00ffe7, #0077ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .service-card p {
+      color: #dcdcdc;
+      font-size: 16px;
+      line-height: 1.5;
     }
 
     footer {
@@ -175,16 +179,15 @@
   </style>
 </head>
 <body>
+  <nav>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <header>
-    <nav>
-      <div class="logo">PB</div>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
     <div class="hero-text">
       <h1>Prestige Blackline</h1>
       <h2>Luxury in Motion</h2>
@@ -200,15 +203,15 @@
     <div class="services">
       <div class="service-card">
         <h3>Airport Transfers</h3>
-        <p>Seamless, timely pickups and drop-offs to ATL and regional airports.</p>
+        <p>We specialize in reliable, stress-free transportation to and from Atlanta Hartsfield-Jackson International and regional airports. With real-time flight tracking, our chauffeurs are always ready — whether your plane arrives early or late. Enjoy spacious, luxury SUVs designed to accommodate your luggage with ease.</p>
       </div>
       <div class="service-card">
         <h3>Corporate Travel</h3>
-        <p>Executive-class rides for business professionals and VIP clients.</p>
+        <p>Impress clients and colleagues with executive-class service. Prestige Blackline provides discreet, punctual, and professional travel tailored to business executives and VIPs. With Wi-Fi-enabled vehicles, you can stay connected and productive on the move while enjoying absolute comfort and privacy.</p>
       </div>
       <div class="service-card">
         <h3>Special Events</h3>
-        <p>Arrive in style for weddings, galas, and exclusive gatherings.</p>
+        <p>From weddings and galas to concerts and sporting events, Prestige Blackline ensures you arrive in style. Our chauffeurs handle the logistics so you can focus on the occasion. Whether it’s an intimate celebration or a large group event, our luxury SUVs deliver elegance and sophistication every step of the way.</p>
       </div>
     </div>
   </section>
@@ -216,13 +219,15 @@
   <!-- About Section -->
   <section id="about">
     <h2>About Us</h2>
-    <p>Prestige Blackline is Atlanta’s premiere black SUV service, built on professionalism, comfort, and style. Our mission is to redefine executive and luxury travel with an unmatched level of service and reliability.</p>
+    <p>Prestige Blackline was founded with a simple mission: to redefine luxury travel in Atlanta. We believe that transportation should be more than just getting from point A to point B — it should be an experience marked by elegance, reliability, and comfort.</p>
+    <p>Our fleet of late-model black SUVs is meticulously maintained and designed to exceed expectations. Every chauffeur is handpicked for professionalism, courtesy, and knowledge of the Atlanta area. Whether you’re traveling for business or pleasure, we deliver the same commitment to excellence on every ride.</p>
+    <p>At Prestige Blackline, we don’t just drive — we elevate your journey.</p>
   </section>
 
   <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>Ready to book your ride? Reach out today.</p>
+    <p>Ready to book your ride? Reach out today and let us handle the rest.</p>
     <p>Email: info@prestigeblackline.com | Phone: (404) 555-1234</p>
   </section>
 
