@@ -4,223 +4,144 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prestige Blackline</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
   <style>
-    /* Smooth scroll */
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      font-family: 'Playfair Display', serif;
-      background-color: black;
-      color: white;
-    }
-
-    header {
-      position: relative;
-      height: 100vh;
-      background: url('IMG_5406.jpg') no-repeat center center/cover;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      text-align: center;
-      color: white;
-      overflow: hidden;
-      padding-top: 120px;
-    }
-
-    /* Sticky Top Nav */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 20px 60px;
-      background: rgba(0, 0, 0, 0.7);
-      box-sizing: border-box;
-      z-index: 999;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li {
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 16px;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #1e90ff;
-    }
-
-    /* Hero text */
-    .hero-text h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 80px;
-      margin: 0;
-      color: white;
-    }
-
-    .hero-text h2 {
-      font-size: 32px;
-      font-weight: 400;
-      margin: 10px 0;
-    }
-
-    .hero-text p {
-      font-size: 22px;
-      margin: 0 0 30px;
-    }
-
-    /* Gradient Button */
-    .hero-text button {
-      padding: 14px 36px;
-      font-size: 18px;
-      border: none;
-      border-radius: 40px;
-      background: linear-gradient(90deg, #00ffe7, #0077ff);
-      color: #0d0d0d;
-      font-weight: bold;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .hero-text button:hover {
-      transform: scale(1.05);
-      background: linear-gradient(90deg, #0077ff, #00ffe7);
-      color: black;
-    }
-
-    /* Tagline under button */
-    .sub-tagline {
-      margin-top: 25px;
-      font-size: 18px;
-      font-style: italic;
-      opacity: 0.85;
-    }
-
-    /* Logo + Coming Soon */
-    .coming-soon {
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .coming-soon img {
-      max-width: 200px;
-      display: block;
-      margin: 0 auto 10px;
-    }
-
-    .coming-soon p {
-      font-size: 20px;
-      color: white;
-      font-style: italic;
-      margin: 0;
-    }
-
-    /* Bottom Sections */
-    section {
-      padding: 80px 20px;
-      text-align: center;
-      background-color: black;
-    }
-
-    /* Gradient Blue Titles */
-    section h2 {
-      font-size: 42px;
-      margin-bottom: 20px;
-      background: linear-gradient(90deg, #00ffe7, #0077ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
-    }
-
-    section p {
-      font-size: 18px;
-      max-width: 900px;
-      margin: 0 auto 40px;
-      color: #dcdcdc;
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      color: #fff;
       line-height: 1.6;
     }
 
-    .services {
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.85);
+      padding: 15px 30px;
       display: flex;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin: 0;
+      color: #fff;
+    }
+
+    header .logo {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2rem;
+      color: #fff;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1523983303491-59f2d9f8d911?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
-      gap: 30px;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding: 0 20px;
     }
 
-    .service-card {
-      background: #111;
-      padding: 30px;
-      border-radius: 12px;
-      width: 300px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-      text-align: center; /* centered */
+    .hero h2 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+      top: 30px; /* Lowered placement */
     }
 
-    .service-card h3 {
-      font-size: 24px;
-      margin-bottom: 15px;
-      background: linear-gradient(90deg, #00ffe7, #0077ff);
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 700px;
+      margin: 20px auto;
+    }
+
+    .btn {
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      color: #fff;
+      transition: transform 0.3s ease;
+      margin-top: 30px;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .service-card p {
-      color: #dcdcdc;
-      font-size: 16px;
-      line-height: 1.5;
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-card h3 {
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 15px;
     }
 
     footer {
-      padding: 30px;
       text-align: center;
-      background: #111;
-      color: #999;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.85);
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
   <header>
-    <div class="hero-text">
-      <h1>Prestige Blackline</h1>
-      <h2>Luxury in Motion</h2>
-      <p>Atlanta's Premiere Black SUV Service.</p>
-      <button>Book Your Ride</button>
-      <div class="sub-tagline">Professional Chauffeurs • Impeccable SUVs • 24/7 Service</div>
-
-      <!-- Cadillac logo + Coming Soon -->
-      <div class="coming-soon">
-        <img src="cadillac-logo.png" alt="Cadillac Logo">
-        <p>Coming Soon January 2026</p>
-      </div>
-    </div>
+    <div class="logo">PB</div>
+    <h1>Prestige Blackline</h1>
   </header>
+
+  <section class="hero">
+    <h2>Coming Soon January 2026</h2>
+    <button class="btn">Book Your Ride</button>
+  </section>
 
   <!-- Our Services Section -->
   <section id="services">
@@ -244,20 +165,13 @@
   <!-- About Section -->
   <section id="about">
     <h2>About Us</h2>
-    <p>Prestige Blackline was founded with a simple mission: to redefine luxury travel in Atlanta. We believe that transportation should be more than just getting from point A to point B — it should be an experience marked by elegance, reliability, and comfort.</p>
-    <p>Our fleet of late-model black SUVs is meticulously maintained and designed to exceed expectations. Every chauffeur is handpicked for professionalism, courtesy, and knowledge of the Atlanta area. Whether you’re traveling for business or pleasure, we deliver the same commitment to excellence on every ride.</p>
-    <p>At Prestige Blackline, we don’t just drive — we elevate your journey.</p>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Ready to book your ride? Reach out today and let us handle the rest.</p>
-    <p>Email: info@prestigeblackline.com | Phone: (404) 555-1234</p>
+    <p style="text-align: center; max-width: 900px; margin: auto;">
+      At Prestige Blackline, we redefine executive transportation. Our mission is to deliver seamless, luxurious travel experiences tailored to professionals, families, and groups who expect only the best. With a fleet of premium black SUVs, highly trained chauffeurs, and a dedication to punctuality and discretion, we stand apart as Atlanta’s premier choice for high-end ground travel.
+    </p>
   </section>
 
   <footer>
-    &copy; 2025 Prestige Blackline. All rights reserved.
+    <p>&copy; 2025 Prestige Blackline. All rights reserved.</p>
   </footer>
 </body>
 </html>
