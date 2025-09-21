@@ -115,6 +115,18 @@
       opacity: 0.85;
     }
 
+    /* Coming Soon */
+    .coming-soon {
+      margin-top: 150px; /* ~10 lines lower */
+      font-size: 80px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      background: linear-gradient(90deg, #00ffe7, #0077ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+    }
+
     /* Bottom Sections */
     section {
       padding: 80px 20px;
@@ -145,6 +157,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
+      text-align: center; /* Center align text inside services */
     }
 
     .service-card {
@@ -153,7 +166,7 @@
       border-radius: 12px;
       width: 300px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-      text-align: left;
+      text-align: center; /* Center align card content */
     }
 
     .service-card h3 {
@@ -194,6 +207,7 @@
       <p>Atlanta's Premiere Black SUV Service.</p>
       <button>Book Your Ride</button>
       <div class="sub-tagline">Professional Chauffeurs • Impeccable SUVs • 24/7 Service</div>
+      <div class="coming-soon">Coming Soon January 2026</div>
     </div>
   </header>
 
@@ -236,4 +250,3 @@
   </footer>
 </body>
 </html>
-
