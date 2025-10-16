@@ -258,5 +258,16 @@
     });
   });
 </script>
+  <script>
+  // On load, remove any #hash (e.g., #contact) and jump to the top
+  window.addEventListener('load', function () {
+    if (location.hash) {
+      // Replace the URL without the hash (no page reload)
+      history.replaceState(null, document.title, window.location.pathname + window.location.search);
+    }
+    // Ensure we’re at the top (helps with mobile restoring scroll position)
+    window.scrollTo(0, 0);
+  });
+</script>
 </body>
 </html>
