@@ -194,6 +194,7 @@
 <body>
   <nav>
     <ul>
+      <li><a href="#" class="home-link">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -248,5 +249,14 @@
   <footer>
     &copy; 2025 Prestige Blackline. All rights reserved.
   </footer>
+  <script>
+  document.querySelector('.home-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+</script>
 </body>
 </html>
