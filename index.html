@@ -190,15 +190,22 @@
       color: #999;
     }
     .hero-logo {
-  max-width: 400px; /* reduced size */
+  max-width: 300px; /* smaller logo */
   height: auto;
-  margin: -60px auto 10px; /* moves it higher on the page */
+  margin: -100px auto 20px; /* moves it higher */
   display: block;
   opacity: 0;
-  animation: fadeInLogo 4s ease forwards;
-  background: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+  animation: fadeInLogo 3s ease forwards;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  ); /* subtle gradient to blend with background */
   border-radius: 20px;
-  padding: 15px;
+  padding: 10px;
+  backdrop-filter: blur(6px); /* smooth blend with background */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 @keyframes fadeInLogo {
