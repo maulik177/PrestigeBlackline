@@ -189,6 +189,50 @@
       background: #111;
       color: #999;
     }
+    /* === Mobile polish (append this at the end of your <style>) === */
+
+/* Prevent sideways scroll and overflowing media */
+html, body { overflow-x: hidden; }
+img, video { max-width: 100%; height: auto; }
+
+/* Use small viewport height on mobile to avoid the 100vh jump */
+@media (max-width: 768px) {
+  header {
+    height: 100svh;      /* mobile-safe viewport height */
+    padding-top: 90px;   /* room for sticky nav */
+  }
+
+  nav { padding: 12px 20px; }
+  nav ul li { margin: 0 10px; }
+  nav ul li a { font-size: 14px; }
+
+  .hero-text h1 { font-size: 42px; }
+  .hero-text h2 { font-size: 22px; }
+  .hero-text p  { font-size: 16px; }
+
+  .hero-text button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 32px;
+  }
+
+  .sub-tagline { font-size: 16px; }
+
+  .coming-soon {
+    font-size: 34px;
+    margin-top: 90px; /* keeps spacing reasonable on small screens */
+  }
+
+  .services { gap: 16px; }
+  .service-card {
+    width: 92%;
+    padding: 20px;
+  }
+
+  section { padding: 60px 16px; }
+  section h2 { font-size: 32px; }
+  section p  { font-size: 16px; }
+}
   </style>
 </head>
 <body>
