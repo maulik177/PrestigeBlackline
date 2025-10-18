@@ -234,6 +234,7 @@ img, video { max-width: 100%; height: auto; }
   section p  { font-size: 16px; }
 }
   </style>
+  <script async src="https://tally.so/widgets/embed.js"></script>
 </head>
 <body>
   <nav>
@@ -250,7 +251,20 @@ img, video { max-width: 100%; height: auto; }
       <h1>Prestige Blackline</h1>
       <h2>Luxury in Motion</h2>
       <p>Atlanta's Premiere Black SUV Service.</p>
-      <button>Book Your Ride</button>
+      <button class="btn" onclick="toggleForm()">Book Your Ride</button>
+      <!-- Hidden embedded form container -->
+<div id="bookingForm" style="display:none; margin-top:40px;">
+  <iframe
+    data-tally-src="https://tally.so/embed/https://tally.so/r/wM9VP0?hideTitle=1&transparentBackground=1"
+    width="100%"
+    height="700"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    title="Prestige Blackline Booking Form"
+    style="border:none; border-radius:12px;">
+  </iframe>
+</div>
       <div class="sub-tagline">Professional Chauffeurs • Impeccable SUVs • 24/7 Service</div>
       <div class="coming-soon">Coming Soon January 2026</div>
     </div>
@@ -311,6 +325,22 @@ img, video { max-width: 100%; height: auto; }
     }
     // Ensure we’re at the top (helps with mobile restoring scroll position)
     window.scrollTo(0, 0);
+  });
+</script>
+  <script>
+  function toggleForm() {
+    const form = document.getElementById('bookingForm');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+    window.scrollTo({ top: form.offsetTop - 80, behavior: 'smooth' });
+  }
+
+  // Auto-resize Tally iframe when embedded
+  let tallyLoaded = false;
+  window.addEventListener("message", (event) => {
+    if (event.data?.tallyIframeHeight && !tallyLoaded) {
+      document.querySelector("iframe[data-tally-src]").height = event.data.tallyIframeHeight + "px";
+      tallyLoaded = true;
+    }
   });
 </script>
 </body>
