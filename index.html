@@ -6,11 +6,7 @@
   <title>Prestige Blackline</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Smooth scroll */
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: 'Playfair Display', serif;
@@ -32,7 +28,6 @@
       padding-top: 120px;
     }
 
-    /* Sticky Top Nav */
     nav {
       position: fixed;
       top: 0;
@@ -46,49 +41,26 @@
       z-index: 999;
     }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav ul li {
-      margin: 0 15px;
-    }
-
+    nav ul { list-style: none; display: flex; margin: 0; padding: 0; }
+    nav ul li { margin: 0 15px; }
     nav ul li a {
       color: white;
       text-decoration: none;
       font-size: 16px;
       transition: color 0.3s;
     }
+    nav ul li a:hover { color: #1e90ff; }
 
-    nav ul li a:hover {
-      color: #1e90ff;
-    }
-
-    /* Hero text */
     .hero-text h1 {
       font-family: 'Playfair Display', serif;
       font-size: 80px;
       margin: 0;
       color: white;
     }
+    .hero-text h2 { font-size: 32px; font-weight: 400; margin: 10px 0; }
+    .hero-text p { font-size: 22px; margin: 0 0 30px; }
 
-    .hero-text h2 {
-      font-size: 32px;
-      font-weight: 400;
-      margin: 10px 0;
-    }
-
-    .hero-text p {
-      font-size: 22px;
-      margin: 0 0 30px;
-    }
-
-    /* Gradient Button */
-    .hero-text button {
+    .btn {
       padding: 14px 36px;
       font-size: 18px;
       border: none;
@@ -100,14 +72,12 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-
-    .hero-text button:hover {
+    .btn:hover {
       transform: scale(1.05);
       background: linear-gradient(90deg, #0077ff, #00ffe7);
       color: black;
     }
 
-    /* Tagline under button */
     .sub-tagline {
       margin-top: 25px;
       font-size: 18px;
@@ -115,9 +85,8 @@
       opacity: 0.85;
     }
 
-    /* Coming Soon */
     .coming-soon {
-      margin-top: 150px; /* ~10 lines lower */
+      margin-top: 150px;
       font-size: 55px;
       font-family: 'Playfair Display', serif;
       font-weight: 600;
@@ -127,14 +96,11 @@
       text-align: center;
     }
 
-    /* Bottom Sections */
     section {
       padding: 80px 20px;
       text-align: center;
       background-color: black;
     }
-
-    /* Gradient Blue Titles */
     section h2 {
       font-size: 42px;
       margin-bottom: 20px;
@@ -143,7 +109,6 @@
       -webkit-text-fill-color: transparent;
       display: inline-block;
     }
-
     section p {
       font-size: 18px;
       max-width: 900px;
@@ -151,24 +116,21 @@
       color: #dcdcdc;
       line-height: 1.6;
     }
-
     .services {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 30px;
-      text-align: center; /* Center align text inside services */
+      text-align: center;
     }
-
     .service-card {
       background: #111;
       padding: 30px;
       border-radius: 12px;
       width: 300px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-      text-align: center; /* Center align card content */
+      text-align: center;
     }
-
     .service-card h3 {
       font-size: 24px;
       margin-bottom: 15px;
@@ -176,63 +138,80 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
     .service-card p {
       color: #dcdcdc;
       font-size: 16px;
       line-height: 1.5;
     }
-
     footer {
       padding: 30px;
       text-align: center;
       background: #111;
       color: #999;
     }
-    /* === Mobile polish (append this at the end of your <style>) === */
 
-/* Prevent sideways scroll and overflowing media */
-html, body { overflow-x: hidden; }
-img, video { max-width: 100%; height: auto; }
+    /* Modal Styling */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.75);
+      display: none;
+      align-items: center; justify-content: center;
+      z-index: 1000;
+      backdrop-filter: blur(4px);
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
 
-/* Use small viewport height on mobile to avoid the 100vh jump */
-@media (max-width: 768px) {
-  header {
-    height: 100svh;      /* mobile-safe viewport height */
-    padding-top: 90px;   /* room for sticky nav */
-  }
+    .modal {
+      width: min(900px, 92vw);
+      height: min(80vh, 720px);
+      background: rgba(0,0,0,0.9);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+      animation: scaleUp 0.25s ease;
+    }
+    @keyframes scaleUp { from {transform: scale(0.9);} to {transform: scale(1);} }
 
-  nav { padding: 12px 20px; }
-  nav ul li { margin: 0 10px; }
-  nav ul li a { font-size: 14px; }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.05);
+    }
+    .modal-title { font-size: 18px; }
+    .modal-close {
+      background: transparent;
+      border: 0;
+      color: white;
+      font-size: 26px;
+      cursor: pointer;
+    }
+    .modal-body { height: calc(100% - 48px); }
+    .modal-body iframe { width: 100%; height: 100%; border: 0; }
 
-  .hero-text h1 { font-size: 42px; }
-  .hero-text h2 { font-size: 22px; }
-  .hero-text p  { font-size: 16px; }
+    /* Mobile */
+    html, body { overflow-x: hidden; }
+    img, video { max-width: 100%; height: auto; }
 
-  .hero-text button {
-    padding: 12px 24px;
-    font-size: 16px;
-    border-radius: 32px;
-  }
-
-  .sub-tagline { font-size: 16px; }
-
-  .coming-soon {
-    font-size: 34px;
-    margin-top: 90px; /* keeps spacing reasonable on small screens */
-  }
-
-  .services { gap: 16px; }
-  .service-card {
-    width: 92%;
-    padding: 20px;
-  }
-
-  section { padding: 60px 16px; }
-  section h2 { font-size: 32px; }
-  section p  { font-size: 16px; }
-}
+    @media (max-width: 768px) {
+      header { height: 100svh; padding-top: 90px; }
+      nav { padding: 12px 20px; }
+      nav ul li { margin: 0 10px; }
+      nav ul li a { font-size: 14px; }
+      .hero-text h1 { font-size: 42px; }
+      .hero-text h2 { font-size: 22px; }
+      .hero-text p { font-size: 16px; }
+      .btn { padding: 12px 24px; font-size: 16px; border-radius: 32px; }
+      .coming-soon { font-size: 34px; margin-top: 90px; }
+      .services { gap: 16px; }
+      .service-card { width: 92%; padding: 20px; }
+      section { padding: 60px 16px; }
+      section h2 { font-size: 32px; }
+      section p { font-size: 16px; }
+    }
   </style>
   <script async src="https://tally.so/widgets/embed.js"></script>
 </head>
@@ -251,53 +230,35 @@ img, video { max-width: 100%; height: auto; }
       <h1>Prestige Blackline</h1>
       <h2>Luxury in Motion</h2>
       <p>Atlanta's Premiere Black SUV Service.</p>
-      <button class="btn" onclick="toggleForm()">Book Your Ride</button>
-      <!-- Hidden embedded form container -->
-<div id="bookingForm" style="display:none; margin-top:40px;">
-  <iframe
-    data-tally-src="https://tally.so/r/wM9VP0?hideTitle=1&transparentBackground=1"
-    width="100%"
-    height="700"
-    frameborder="0"
-    marginheight="0"
-    marginwidth="0"
-    title="Prestige Blackline Booking Form"
-    style="border:none; border-radius:12px;">
-  </iframe>
-</div>
+      <button class="btn" id="bookBtn">Book Your Ride</button>
       <div class="sub-tagline">Professional Chauffeurs • Impeccable SUVs • 24/7 Service</div>
       <div class="coming-soon">Coming Soon January 2026</div>
     </div>
   </header>
 
-  <!-- Our Services Section -->
   <section id="services">
     <h2>Our Services</h2>
     <div class="services">
       <div class="service-card">
         <h3>Airport Transfers</h3>
-        <p>We specialize in reliable, stress-free transportation to and from Atlanta Hartsfield-Jackson International and regional airports. With real-time flight tracking, our chauffeurs are always ready — whether your plane arrives early or late. Enjoy spacious, luxury SUVs designed to accommodate your luggage with ease.</p>
+        <p>We specialize in reliable, stress-free transportation to and from Atlanta Hartsfield-Jackson International and regional airports...</p>
       </div>
       <div class="service-card">
         <h3>Corporate Travel</h3>
-        <p>Impress clients and colleagues with executive-class service. Prestige Blackline provides discreet, punctual, and professional travel tailored to business executives and VIPs. With Wi-Fi-enabled vehicles, you can stay connected and productive on the move while enjoying absolute comfort and privacy.</p>
+        <p>Impress clients and colleagues with executive-class service. Prestige Blackline provides discreet, punctual, and professional travel...</p>
       </div>
       <div class="service-card">
         <h3>Special Events</h3>
-        <p>From weddings and galas to concerts and sporting events, Prestige Blackline ensures you arrive in style. Our chauffeurs handle the logistics so you can focus on the occasion. Whether it’s an intimate celebration or a large group event, our luxury SUVs deliver elegance and sophistication every step of the way.</p>
+        <p>From weddings and galas to concerts and sporting events, Prestige Blackline ensures you arrive in style...</p>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about">
     <h2>About Us</h2>
-    <p>Prestige Blackline was founded with a simple mission: to redefine luxury travel in Atlanta. We believe that transportation should be more than just getting from point A to point B — it should be an experience marked by elegance, reliability, and comfort.</p>
-    <p>Our fleet of black SUVs is meticulously maintained and designed to exceed expectations. Every chauffeur is handpicked for professionalism, courtesy, and knowledge of the Atlanta area. Whether you’re traveling for business or pleasure, we deliver the same commitment to excellence on every ride.</p>
-    <p>At Prestige Blackline, we don’t just drive — we elevate your journey.</p>
+    <p>Prestige Blackline was founded with a simple mission: to redefine luxury travel in Atlanta...</p>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
     <p>Ready to book your ride? Reach out today and let us handle the rest.</p>
@@ -307,41 +268,55 @@ img, video { max-width: 100%; height: auto; }
   <footer>
     &copy; 2025 Prestige Blackline. All rights reserved.
   </footer>
-  <script>
-  document.querySelector('.home-link').addEventListener('click', function(e) {
-    e.preventDefault();
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-</script>
-  <script>
-  // On load, remove any #hash (e.g., #contact) and jump to the top
-  window.addEventListener('load', function () {
-    if (location.hash) {
-      // Replace the URL without the hash (no page reload)
-      history.replaceState(null, document.title, window.location.pathname + window.location.search);
-    }
-    // Ensure we’re at the top (helps with mobile restoring scroll position)
-    window.scrollTo(0, 0);
-  });
-</script>
-  <script>
-  function toggleForm() {
-    const form = document.getElementById('bookingForm');
-    form.style.display = form.style.display === 'none' ? 'block' : 'none';
-    window.scrollTo({ top: form.offsetTop - 80, behavior: 'smooth' });
-  }
 
-  // Auto-resize Tally iframe when embedded
-  let tallyLoaded = false;
-  window.addEventListener("message", (event) => {
-    if (event.data?.tallyIframeHeight && !tallyLoaded) {
-      document.querySelector("iframe[data-tally-src]").height = event.data.tallyIframeHeight + "px";
-      tallyLoaded = true;
+  <!-- Modal -->
+  <div id="pbModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="pbModalTitle">
+    <div class="modal">
+      <div class="modal-header">
+        <div id="pbModalTitle" class="modal-title">Reserve Your Ride</div>
+        <button class="modal-close" aria-label="Close" onclick="closePBModal()">×</button>
+      </div>
+      <div class="modal-body">
+        <iframe data-tally-src="https://tally.so/embed/wM9VP0?hideTitle=1&transparentBackground=1" title="Prestige Blackline Booking Form"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('pbModal');
+    const bookBtn = document.getElementById('bookBtn');
+
+    function openPBModal() {
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
     }
-  });
-</script>
+    function closePBModal() {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    bookBtn.addEventListener('click', openPBModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closePBModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closePBModal(); });
+
+    window.addEventListener('message', (event) => {
+      if (event.data?.tallyIframeHeight) {
+        const iframe = document.querySelector('#pbModal iframe');
+        iframe.style.height = Math.min(event.data.tallyIframeHeight, window.innerHeight * 0.8) + 'px';
+      }
+    });
+
+    // Scroll to top
+    document.querySelector('.home-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    window.addEventListener('load', function () {
+      if (location.hash) {
+        history.replaceState(null, document.title, window.location.pathname + window.location.search);
+      }
+      window.scrollTo(0, 0);
+    });
+  </script>
 </body>
 </html>
