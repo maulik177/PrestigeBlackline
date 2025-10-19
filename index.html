@@ -14,10 +14,11 @@
       color: white;
     }
 
+    /* Header is now pure black, no image */
     header {
       position: relative;
       height: 100vh;
-      background: url('IMG_5406.jpg') no-repeat center center/cover;
+      background: #000; /* removed background image */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -26,6 +27,20 @@
       color: white;
       overflow: hidden;
       padding-top: 120px;
+    }
+
+    /* Logo in hero: no borders, no background box, responsive width */
+    .logo-hero {
+      display: block;
+      width: min(780px, 90vw);
+      height: auto;
+      background: transparent;
+      border: 0;
+      outline: none;
+      image-rendering: auto;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      margin: 0 auto 10px;
     }
 
     nav {
@@ -51,14 +66,11 @@
     }
     nav ul li a:hover { color: #1e90ff; }
 
-    .hero-text h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 80px;
-      margin: 0;
-      color: white;
-    }
-    .hero-text h2 { font-size: 32px; font-weight: 400; margin: 10px 0; }
-    .hero-text p { font-size: 22px; margin: 0 0 30px; }
+    /* Removed h1/h2 styles from hero content (kept here if used elsewhere) */
+    .hero-text h1 { display:none; }
+    .hero-text h2 { display:none; }
+
+    .hero-text p { font-size: 22px; margin: 10px 0 30px; }
 
     .btn {
       padding: 14px 36px;
@@ -197,17 +209,14 @@
     img, video { max-width: 100%; height: auto; }
 
     @media (max-width: 768px) {
-      header { height: 100svh; padding-top: 90px;
-        /* 👇 Only addition: swap to your portrait image on phones */
-        background-image: url('IMG_5406_mobile.jpg');
-        background-position: center top;
-        background-size: cover;
-      }
+      header { height: 100svh; padding-top: 90px; }
       nav { padding: 12px 20px; }
       nav ul li { margin: 0 10px; }
       nav ul li a { font-size: 14px; }
-      .hero-text h1 { font-size: 42px; }
-      .hero-text h2 { font-size: 22px; }
+
+      /* Logo scales down nicely on phones */
+      .logo-hero { width: min(520px, 88vw); }
+
       .hero-text p { font-size: 16px; }
       .btn { padding: 12px 24px; font-size: 16px; border-radius: 32px; }
       .coming-soon { font-size: 34px; margin-top: 90px; }
@@ -232,8 +241,9 @@
 
   <header>
     <div class="hero-text">
-      <h1>Prestige Blackline</h1>
-      <h2>Luxury in Motion</h2>
+      <!-- Replaced the H1/H2 with your logo image -->
+      <img src="logo.png" alt="Prestige Blackline logo" class="logo-hero">
+      <!-- Kept the rest of your hero content unchanged -->
       <p>Atlanta's Premiere Black SUV Service.</p>
       <button class="btn" id="bookBtn">Book Your Ride</button>
       <div class="sub-tagline">Professional Chauffeurs • Impeccable SUVs • 24/7 Service</div>
