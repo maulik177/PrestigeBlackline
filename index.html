@@ -197,7 +197,12 @@
     img, video { max-width: 100%; height: auto; }
 
     @media (max-width: 768px) {
-      header { height: 100svh; padding-top: 90px; }
+      header { height: 100svh; padding-top: 90px;
+        /* 👇 Only addition: swap to your portrait image on phones */
+        background-image: url('IMG_5406_mobile.jpg');
+        background-position: center top;
+        background-size: cover;
+      }
       nav { padding: 12px 20px; }
       nav ul li { margin: 0 10px; }
       nav ul li a { font-size: 14px; }
@@ -257,9 +262,7 @@
   <section id="about">
     <h2>About Us</h2>
     <p>Prestige Blackline was founded with a simple mission: to redefine luxury travel in Atlanta. We believe that transportation should be more than just getting from point A to point B — it should be an experience marked by elegance, reliability, and comfort.</p>
-    
     <p>Our fleet of black SUVs is meticulously maintained and designed to exceed expectations. Every chauffeur is handpicked for professionalism, courtesy, and knowledge of the Atlanta area. Whether you’re traveling for business or pleasure, we deliver the same commitment to excellence on every ride.</p>
-
     <p>At Prestige Blackline, we don’t just drive — we elevate your journey.</p>
   </section>
 
