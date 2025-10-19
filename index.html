@@ -14,11 +14,10 @@
       color: white;
     }
 
-    /* Header with background image for all devices */
     header {
       position: relative;
       height: 100vh;
-      background: #000;
+      background: url('IMG_5406.jpg') no-repeat center center/cover;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -27,28 +26,6 @@
       color: white;
       overflow: hidden;
       padding-top: 120px;
-    }
-
-    /* Background image styling */
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      z-index: 0;
-      pointer-events: none;
-      user-select: none;
-    }
-
-    /* Overlay for readability */
-    header::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.55);
-      z-index: 1;
     }
 
     nav {
@@ -74,7 +51,6 @@
     }
     nav ul li a:hover { color: #1e90ff; }
 
-    .hero-text { position: relative; z-index: 2; }
     .hero-text h1 {
       font-family: 'Playfair Display', serif;
       font-size: 80px;
@@ -216,12 +192,12 @@
     .modal-body { height: calc(100% - 48px); }
     .modal-body iframe { width: 100%; height: 100%; border: 0; }
 
+    /* Mobile */
     html, body { overflow-x: hidden; }
     img, video { max-width: 100%; height: auto; }
 
     @media (max-width: 768px) {
       header { height: 100svh; padding-top: 90px; }
-      .hero-bg { object-position: center 20%; } /* FIX for vertical mobile view */
       nav { padding: 12px 20px; }
       nav ul li { margin: 0 10px; }
       nav ul li a { font-size: 14px; }
@@ -250,7 +226,6 @@
   </nav>
 
   <header>
-    <img class="hero-bg" src="IMG_5406.jpg" alt="Prestige Blackline Background">
     <div class="hero-text">
       <h1>Prestige Blackline</h1>
       <h2>Luxury in Motion</h2>
@@ -282,7 +257,9 @@
   <section id="about">
     <h2>About Us</h2>
     <p>Prestige Blackline was founded with a simple mission: to redefine luxury travel in Atlanta. We believe that transportation should be more than just getting from point A to point B — it should be an experience marked by elegance, reliability, and comfort.</p>
+    
     <p>Our fleet of black SUVs is meticulously maintained and designed to exceed expectations. Every chauffeur is handpicked for professionalism, courtesy, and knowledge of the Atlanta area. Whether you’re traveling for business or pleasure, we deliver the same commitment to excellence on every ride.</p>
+
     <p>At Prestige Blackline, we don’t just drive — we elevate your journey.</p>
   </section>
 
@@ -333,6 +310,7 @@
       }
     });
 
+    // Scroll to top
     document.querySelector('.home-link').addEventListener('click', function(e) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
