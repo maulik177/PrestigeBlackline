@@ -14,10 +14,11 @@
       color: white;
     }
 
+    /* Header now uses an <img> for max mobile compatibility */
     header {
       position: relative;
-      height: 100vh;
-      background: url('IMG_5406.jpg') no-repeat center center/cover;
+      height: 100vh;               /* desktop */
+      background: #000;            /* fallback color */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -26,6 +27,26 @@
       color: white;
       overflow: hidden;
       padding-top: 120px;
+    }
+    /* Background image element */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;           /* fills area without distortion */
+      object-position: center;     /* adjust focal point */
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+    }
+    /* Dark overlay (like before) */
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 1;
     }
 
     nav {
@@ -51,6 +72,7 @@
     }
     nav ul li a:hover { color: #1e90ff; }
 
+    .hero-text { position: relative; z-index: 2; } /* sits above overlay */
     .hero-text h1 {
       font-family: 'Playfair Display', serif;
       font-size: 80px;
@@ -150,7 +172,7 @@
       color: #999;
     }
 
-    /* Modal Styling */
+    /* Modal Styling (unchanged) */
     .modal-overlay {
       position: fixed; inset: 0;
       background: rgba(0,0,0,0.75);
@@ -192,25 +214,30 @@
     .modal-body { height: calc(100% - 48px); }
     .modal-body iframe { width: 100%; height: 100%; border: 0; }
 
-    /* Mobile */
+    /* Mobile polish */
     html, body { overflow-x: hidden; }
     img, video { max-width: 100%; height: auto; }
 
     @media (max-width: 768px) {
       header { height: 100svh; padding-top: 90px; }
+      /* Shift focal point slightly up on mobile if subject is higher */
+      .hero-bg { object-position: center 30%; }
+
       nav { padding: 12px 20px; }
       nav ul li { margin: 0 10px; }
       nav ul li a { font-size: 14px; }
+
       .hero-text h1 { font-size: 42px; }
       .hero-text h2 { font-size: 22px; }
-      .hero-text p { font-size: 16px; }
+      .hero-text p  { font-size: 16px; }
+
       .btn { padding: 12px 24px; font-size: 16px; border-radius: 32px; }
       .coming-soon { font-size: 34px; margin-top: 90px; }
       .services { gap: 16px; }
       .service-card { width: 92%; padding: 20px; }
       section { padding: 60px 16px; }
       section h2 { font-size: 32px; }
-      section p { font-size: 16px; }
+      section p  { font-size: 16px; }
     }
   </style>
   <script async src="https://tally.so/widgets/embed.js"></script>
@@ -226,6 +253,8 @@
   </nav>
 
   <header>
+    <!-- NEW: reliable mobile background image -->
+    <img class="hero-bg" src="IMG_5406.jpg" alt="Prestige Blackline Background">
     <div class="hero-text">
       <h1>Prestige Blackline</h1>
       <h2>Luxury in Motion</h2>
@@ -257,9 +286,7 @@
   <section id="about">
     <h2>About Us</h2>
     <p>Prestige Blackline was founded with a simple mission: to redefine luxury travel in Atlanta. We believe that transportation should be more than just getting from point A to point B — it should be an experience marked by elegance, reliability, and comfort.</p>
-    
     <p>Our fleet of black SUVs is meticulously maintained and designed to exceed expectations. Every chauffeur is handpicked for professionalism, courtesy, and knowledge of the Atlanta area. Whether you’re traveling for business or pleasure, we deliver the same commitment to excellence on every ride.</p>
-
     <p>At Prestige Blackline, we don’t just drive — we elevate your journey.</p>
   </section>
 
