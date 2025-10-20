@@ -28,7 +28,6 @@
       padding-top: 120px;
     }
 
-    /* Logo fade-in animation */
     @keyframes fadeInUp {
       0% { opacity: 0; transform: translateY(40px); }
       100% { opacity: 1; transform: translateY(0); }
@@ -36,7 +35,7 @@
 
     .logo-hero {
       display: block;
-      width: min(600px, 85vw); /* slightly smaller */
+      width: min(600px, 85vw);
       height: auto;
       background: transparent;
       border: none;
@@ -68,11 +67,10 @@
     }
     nav ul li a:hover { color: #1e90ff; }
 
-    /* UPDATED tagline (desktop) */
     .hero-text p {
-      font-size: 28px;          /* larger on desktop */
-      margin: -10px 0 20px;     /* moves it higher */
-      font-weight: 500;         /* slight emphasis */
+      font-size: 28px;
+      margin: -10px 0 40px; /* Increased space below tagline */
+      font-weight: 500;
     }
 
     .btn {
@@ -86,6 +84,7 @@
       text-transform: uppercase;
       cursor: pointer;
       transition: all 0.3s ease;
+      margin-bottom: 35px; /* Added space below button */
     }
     .btn:hover {
       transform: scale(1.05);
@@ -217,14 +216,16 @@
       nav ul li { margin: 0 10px; }
       nav ul li a { font-size: 14px; }
       .logo-hero { width: min(360px, 80vw); margin-bottom: 25px; }
-
-      /* UPDATED tagline (mobile) */
       .hero-text p {
-        font-size: 20px;      /* balanced for phones */
-        margin: 0 0 16px;     /* tidy spacing */
+        font-size: 20px;
+        margin: 0 0 30px; /* Increased space below tagline for mobile */
       }
-
-      .btn { padding: 12px 24px; font-size: 16px; border-radius: 32px; }
+      .btn {
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 32px;
+        margin-bottom: 30px; /* Added space below button for mobile */
+      }
       .coming-soon { font-size: 34px; margin-top: 70px; }
       .services { gap: 16px; }
       .service-card { width: 92%; padding: 20px; }
